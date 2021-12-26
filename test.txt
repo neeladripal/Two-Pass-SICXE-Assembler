@@ -1,0 +1,36 @@
+00000   TEST        START               0                   
+00000   FIRST       LDT                 #1                  750001
+00003               LDS                 #10                 6D000A
+00006               +JSUB               RDREC               4B100011
+0000A               +JSUB               WRREC               4B10002D
+0000E   LENGTH      RESW                1                   
+00011   RDREC       CLEAR               A                   B700
+00013   RLOOP       TD                  INPUT               E32016
+00016               JEQ                 RLOOP               332FFA
+00019               RD                  INPUT               DB2010
+0001C               COMPR               A,T                 A305
+0001E               JLT                 RLOOP               3B2FF2
+00021               COMPR               A,S                 A304
+00023               JGT                 RLOOP               372FED
+00026               STA                 LENGTH              0F2FE5
+00029               RSUB                                    4F0000
+0002C   INPUT       BYTE                X'F1'               F1
+0002D   WRREC       LDX                 #0                  050000
+00030               LDS                 #1                  6D0001
+00033               LDA                 #0                  010000
+00036               LDT                 LENGTH              772FD5
+00039   WLOOP       TD                  OUTPUT              E3201C
+0003C               JEQ                 WLOOP               332FFA
+0003F               WD                  OUTPUT              DF2016
+00042               ADDR                S,A                 9340
+00044               STA                 VALUE1              0F2012
+00047               STS                 VALUE2              7F2012
+0004A               LDA                 VALUE2              03200F
+0004D               LDS                 VALUE1              6F2009
+00050               TIXR                T                   BB50
+00052               JLT                 WLOOP               3B2FE4
+00055               RSUB                                    4F0000
+00058   OUTPUT      BYTE                X'05'               05
+00059   VALUE1      RESW                1                   
+0005C   VALUE2      RESW                1                   
+0005F               END                 FIRST               
