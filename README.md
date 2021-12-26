@@ -216,3 +216,6 @@ Pass 2 errors (if any) will be displayed in listing file (test.txt here).
 - Invalid Opcode
 - Symbol Not Found
 - Address does not fit in Object Code
+
+## Flow Diagram:
+![flow](flow.png)
