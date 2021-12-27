@@ -1,5 +1,7 @@
 # TWO PASS SIC/XE ASSEMBLER
 
+Group project of Systems Programming Lab, CSE Jadavpur University. Contributors can be found [here](contributors.csv).
+
 ## Brief Overview
 
 - SIC Machine Extended Edition
@@ -208,6 +210,7 @@ E^000000
 ```
 
 Pass 1 errors (if any) will be displayed in terminal.
+
 Pass 2 errors (if any) will be displayed in listing file (test.txt here).
 
 ## Errors Handled:
